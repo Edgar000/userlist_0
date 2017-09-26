@@ -1,0 +1,50 @@
+{
+  "name": "userlist_0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "bundle": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edgar000/userlist_0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "font-awesome-sass-loader": "^2.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "redux-devtools": "^3.4.0",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-log-monitor": "^1.3.0",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}
