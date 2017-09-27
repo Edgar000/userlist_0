@@ -10,7 +10,7 @@ export class App extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/:page" component={UserList}/>
-                    <Route exact path="/:page/:user" component={UserProfile}/>
+                    <Route exact path="/users/:user" component={UserProfile}/>
                     <Redirect from="/" to="/0"/>
                 </Switch>
             </BrowserRouter>

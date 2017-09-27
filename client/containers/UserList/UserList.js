@@ -6,16 +6,6 @@ import {UserListItem} from '../../components/UserListItem/UserListItem';
 import './UserList.scss';
 
 class UserList extends Component {
-    state = {
-        page: +this.props.match.params.page,
-    };
-
-    getPage = (page) => {
-        this.setState({
-            page
-        });
-    };
-
     componentWillReceiveProps(nextProps) {
         if (this.props.match.params.page !== nextProps.match.params.page) {
             this.props.getUsers(nextProps.match.params.page);
@@ -23,24 +13,22 @@ class UserList extends Component {
     }
 
     componentDidMount() {
-        this.props.getUsers(this.state.page);
+        this.props.getUsers(this.props.match.params.page);
     }
 
     render() {
+        const page = this.props.match.params.page;
         const users = this.props.users.map((item) => {
             return (
-                <UserListItem user={item} page={this.state.page} key={item.id}/>
+                <UserListItem user={item} key={item.id}/>
             );
         });
 
         return (
             <div className="user-list">
                 <div className="user-list__nav">
-                    {this.state.page > 0 ?
-                        <NavLink to={'/' + (this.state.page - 1)}
-                                 onClick={() => {
-                                     this.getPage(this.state.page - 1)
-                                 }}
+                    {page > 0 ?
+                        <NavLink to={`/${+page - 1}`}
                                  className="user-list__nav__button">
                             <i className="fa fa-toggle-left"/>
                         </NavLink>
@@ -49,13 +37,10 @@ class UserList extends Component {
                     }
 
                     <div className="user-list__nav__page">
-                        {'page ' + this.state.page}
+                        page {page}
                     </div>
 
-                    <NavLink to={'/' + (this.state.page + 1)}
-                             onClick={() => {
-                                 this.getPage(this.state.page + 1)
-                             }}
+                    <NavLink to={`/${+page + 1}`}
                              className="user-list__nav__button">
                         <i className="fa fa-toggle-right"/>
                     </NavLink>

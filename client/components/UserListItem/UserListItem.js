@@ -4,16 +4,16 @@ import './UserListItem.scss';
 
 export class UserListItem extends Component {
     render() {
-        const {user, page} = this.props;
+        const {user} = this.props;
 
         return (
             <div className="user-list-item">
-                <NavLink to={'/' + page + '/' + user.login} className="user-list-item__avatar">
+                <NavLink to={`/users/${user.login}`} className="user-list-item__avatar">
                     <img src={user.avatar_url} alt={user.login}/>
                 </NavLink>
 
                 <div className="user-list-item__info">
-                    <NavLink to={'/' + page + '/' + user.login} className="user-list-item__info__login">
+                    <NavLink to={`/users/${user.login}`} className="user-list-item__info__login">
                         {user.login}
                     </NavLink>
 

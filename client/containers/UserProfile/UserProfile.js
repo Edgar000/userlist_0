@@ -10,14 +10,14 @@ class UserProfile extends Component {
     }
 
     render() {
-        const user = this.props.user;
+        const {user, history} = this.props;
 
         return (
             <div className="user-profile">
-                <NavLink to={'/' + (this.props.match.params.page)} className="user-profile__nav">
+                <a onClick={history.goBack} className="user-profile__nav">
                     <span>back to list</span>
                     <i className="fa fa-th-list"/>
-                </NavLink>
+                </a>
 
                 <div className="user-profile__info">
                     <div className="user-profile__info__avatar">
@@ -59,15 +59,15 @@ class UserProfile extends Component {
 
                 <div className="user-profile__details">
                     <div>
-                        {'followers: ' + user.followers + ' users'}
+                        followers: {user.followers} users
                     </div>
 
                     <div>
-                        {'following: ' + user.following + ' users'}
+                        following: {user.following} users
                     </div>
 
                     <div>
-                        {'profile created: ' + user.created_at}
+                        profile created: {user.created_at}
                     </div>
                 </div>
             </div>
