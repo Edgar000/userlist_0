@@ -1,4 +1,39 @@
-img {
-  height: 50px;
-  width: 50px;
+.user-list-item {
+  display: flex;
+  margin: 10px 0 10px 20px;
+  transition: margin-left 0.1s linear;
+}
+
+.user-list-item__avatar {
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.user-list-item:hover {
+  margin-left: 40px;
+}
+
+.user-list-item__info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.user-list-item__info__login {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.user-list-item__info__url {
+  color: darkgray;
+  font-size: 12px;
+}
+
+.user-list-item__info__url:hover {
+  color: black;
 }

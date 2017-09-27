@@ -1,0 +1,23 @@
+.user-list__nav {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-list__nav__page {
+  margin: 0 10px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
+
+.user-list__nav__button {
+  color: darkgray;
+
+  i {
+    font-size: 30px;
+  }
+}
+
+.user-list__nav__button:hover {
+  color: black;
+}

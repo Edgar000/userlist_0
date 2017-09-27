@@ -7,12 +7,20 @@ export class UserListItem extends Component {
         const {user, page} = this.props;
 
         return (
-            <div>
-                <NavLink to={'/' + page + '/' + user.login}>
+            <div className="user-list-item">
+                <NavLink to={'/' + page + '/' + user.login} className="user-list-item__avatar">
                     <img src={user.avatar_url} alt={user.login}/>
-                    {user.login}
-                    {user.html_url}
                 </NavLink>
+
+                <div className="user-list-item__info">
+                    <NavLink to={'/' + page + '/' + user.login} className="user-list-item__info__login">
+                        {user.login}
+                    </NavLink>
+
+                    <NavLink to={user.html_url} target="_blank" className="user-list-item__info__url">
+                        {user.html_url}
+                    </NavLink>
+                </div>
             </div>
         );
     }

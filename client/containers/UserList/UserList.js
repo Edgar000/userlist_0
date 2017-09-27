@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getUsers} from '../../actions/actions';
 import {UserListItem} from '../../components/UserListItem/UserListItem';
+import './UserList.scss';
 
 class UserList extends Component {
     state = {
@@ -33,23 +34,33 @@ class UserList extends Component {
         });
 
         return (
-            <div>
-                {this.state.page > 0 ?
-                    <NavLink to={'/' + (this.state.page - 1)}
+            <div className="user-list">
+                <div className="user-list__nav">
+                    {this.state.page > 0 ?
+                        <NavLink to={'/' + (this.state.page - 1)}
+                                 onClick={() => {
+                                     this.getPage(this.state.page - 1)
+                                 }}
+                                 className="user-list__nav__button">
+                            <i className="fa fa-toggle-left"/>
+                        </NavLink>
+                        :
+                        null
+                    }
+
+                    <div className="user-list__nav__page">
+                        {'page ' + this.state.page}
+                    </div>
+
+                    <NavLink to={'/' + (this.state.page + 1)}
                              onClick={() => {
-                                 this.getPage(this.state.page - 1)
-                             }}>
-                        Prev
+                                 this.getPage(this.state.page + 1)
+                             }}
+                             className="user-list__nav__button">
+                        <i className="fa fa-toggle-right"/>
                     </NavLink>
-                    :
-                    null
-                }
-                <NavLink to={'/' + (this.state.page + 1)}
-                         onClick={() => {
-                             this.getPage(this.state.page + 1)
-                         }}>
-                    Next
-                </NavLink>
+                </div>
+
                 {users}
             </div>
         );

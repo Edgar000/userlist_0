@@ -1,0 +1,67 @@
+.user-profile {
+  margin-left: 20px;
+}
+
+.user-profile__nav {
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+
+  span {
+    margin: 0 10px;
+  }
+
+  i {
+    color: darkgray;
+    font-size: 30px;
+  }
+}
+
+.user-profile__nav:hover {
+  i {
+    color: black;
+  }
+}
+
+.user-profile__info {
+  margin-top: 10px;
+  display: flex;
+}
+
+.user-profile__info__avatar {
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.user-profile__info__contacts {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+}
+
+.user-profile__bio {
+  margin-top: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.user-profile__bio__url {
+  color: darkgray;
+  font-size: 12px;
+}
+
+.user-profile__bio__url:hover {
+  color: black;
+}
+
+.user-profile__details {
+  margin-top: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+}
